@@ -232,6 +232,10 @@ void GazeboOdometryPlugin::Load(physics::ModelPtr _model,
       boost::bind(&GazeboOdometryPlugin::OnUpdate, this, _1));
 }
 
+void GazeboOdometryPlugin::Reset() {
+    odometry_queue_.clear();
+}
+
 // This gets called by the world update start event.
 void GazeboOdometryPlugin::OnUpdate(const common::UpdateInfo& _info) {
   if (kPrintOnUpdates) {

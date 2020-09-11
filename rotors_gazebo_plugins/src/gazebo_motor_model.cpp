@@ -208,6 +208,10 @@ void GazeboMotorModel::Load(physics::ModelPtr _model, sdf::ElementPtr _sdf) {
           time_constant_up_, time_constant_down_, ref_motor_input_));
 }
 
+void GazeboMotorModel::Reset() {
+  prev_sim_time_ = model_->GetWorld()->SimTime().Double();
+}
+
 // This gets called by the world update start event.
 void GazeboMotorModel::OnUpdate(const common::UpdateInfo& _info) {
   if (kPrintOnUpdates) {

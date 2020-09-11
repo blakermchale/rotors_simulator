@@ -263,6 +263,18 @@ void GazeboImuPlugin::AddNoise(Eigen::Vector3d* linear_acceleration,
   }
 }
 
+void GazeboImuPlugin::Reset()
+{
+  last_time_ = world_->SimTime();
+  // orientation = ignition::math::Quaternion();
+  // velocity = 0.0;
+  // accel = 0.0;
+
+  // accelModel.reset();
+  // rateModel.reset();
+  // headingModel.reset();
+}
+
 void GazeboImuPlugin::OnUpdate(const common::UpdateInfo& _info) {
   if (kPrintOnUpdates) {
     gzdbg << __FUNCTION__ << "() called." << std::endl;

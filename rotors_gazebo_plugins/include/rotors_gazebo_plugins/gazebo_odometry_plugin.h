@@ -94,6 +94,7 @@ class GazeboOdometryPlugin : public ModelPlugin {
  protected:
   void Load(physics::ModelPtr _model, sdf::ElementPtr _sdf);
   void OnUpdate(const common::UpdateInfo& /*_info*/);
+  void Reset();
 
  private:
 

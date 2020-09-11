@@ -109,6 +109,7 @@ class GazeboMotorModel : public MotorModel, public ModelPlugin {
   virtual void UpdateForcesAndMoments();
   virtual void Load(physics::ModelPtr _model, sdf::ElementPtr _sdf);
   virtual void OnUpdate(const common::UpdateInfo & /*_info*/);
+  virtual void Reset();
 
  private:
   /// \brief    Flag that is set to true once CreatePubsAndSubs() is called, used

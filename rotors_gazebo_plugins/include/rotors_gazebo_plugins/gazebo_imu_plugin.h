@@ -117,6 +117,9 @@ class GazeboImuPlugin : public ModelPlugin {
   /// \details	Calculates IMU parameters and then publishes one IMU message.
   void OnUpdate(const common::UpdateInfo&);
 
+  /// \brief    This get called by the world reset. TODO: Is this needed? BM
+  void Reset();
+
  private:
 
   /// \brief    Flag that is set to true once CreatePubsAndSubs() is called, used
